@@ -16,19 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group([
 
-    'middleware' => 'api',
-    'prefix' => 'auth'
+Route::post('login/username', [AuthController::class, 'loginWithUsername']);
+Route::post('login/token', [AuthController::class, 'loginWithToken']);
 
-], function ($router) {
-    Route::post('login/username', [AuthController::class, 'loginWithUsername']);
-    Route::post('login/token', [AuthController::class, 'loginWithToken']);
-
-    Route::middleware('auth:api')->group(function () {
-        Route::get("data", [HomeController::class, 'message']);
-        // Route::post('logout', [AuthController::class, 'logout'])->name("logout");
-        // Route::get('me', [AuthController::class, 'me']);
-    });
-
+Route::middleware('auth:api')->group(function () {
+    Route::get("data", [HomeController::class, 'message']);
+    // Route::post('logout', [AuthController::class, 'logout'])->name("logout");
+    // Route::get('me', [AuthController::class, 'me']);
 });

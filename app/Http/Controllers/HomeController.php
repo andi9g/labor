@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\asetM;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -26,9 +27,10 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function message() {
-        return response()->json([
-            "message" => "selamat datang",
-        ]);
+    public function message(Request $request) {
+
+        $data = asetM::paginate(20);
+        $data->appends($request->all());
+        return response()->json($data);
     }
 }

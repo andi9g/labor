@@ -49,6 +49,21 @@ class Laboratorium extends Migration
                 "tahunaset" => "2020",
                 "jumlahaset" => "2",
             ],
+            [
+                "namaaset" => "Meja",
+                "tahunaset" => "2023",
+                "jumlahaset" => "2",
+            ],
+            [
+                "namaaset" => "Kursi",
+                "tahunaset" => "2023",
+                "jumlahaset" => "2",
+            ],
+            [
+                "namaaset" => "Whiteboard",
+                "tahunaset" => "2023",
+                "jumlahaset" => "2",
+            ],
         ];
 
 

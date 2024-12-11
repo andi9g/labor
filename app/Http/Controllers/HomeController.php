@@ -29,7 +29,10 @@ class HomeController extends Controller
 
     public function message(Request $request) {
 
-        $data = asetM::paginate(20);
+        $keyword = empty($request->keyword)?'':$request->keyword;
+
+        $data = asetM::where("namaaset", "like", "%$keyword%")
+        ->paginate(20);
         $data->appends($request->all());
         return response()->json($data);
     }

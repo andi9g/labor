@@ -11,7 +11,7 @@ class asetM extends Model
     protected $table = 'aset';
     protected $primaryKey = 'idaset';
     protected $connection = 'mysql';
-    protected $guarded = [];
+    protected $fillable = ["namaaset", "tahunaset", "jumlahaset"];
 
     public function asetrusak()
     {
